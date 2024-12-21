@@ -55,24 +55,20 @@
         </section>
 
         <footer>
-            <div class="navdot"></div>
-            <div class="navdot"></div>
-            <div class="navdot"></div>
-            <div class="navdot"></div>
+            <a href="#home-card" class="navdot-link" id="home-dot">
+                <div class="navdot"></div>
+            </a>
+            <a href="#skills-card" class="navdot-link" id="skills-dot">
+                <div class="navdot"></div>
+            </a>
+            <a href="#education-card" class="navdot-link" id="education-dot">
+                <div class="navdot"></div>
+            </a>
+            <a href="#about-card" class="navdot-link" id="about-dot">
+                <div class="navdot"></div>
+            </a>
         </footer>
-
-        <!-- JavaScript -->
-        <script>
-        document.querySelectorAll('.child').forEach(item => {
-            item.addEventListener('mouseover', () => {
-                const heading = document.querySelector('.page-heading h1');
-                heading.classList.add('hover-gradient-' + item.id);
-            });
-            item.addEventListener('mouseout', () => {
-                const heading = document.querySelector('.page-heading h1');
-                heading.className = heading.className.replace(/\bhover-gradient-\S+/g, '');
-            });
-        });
-        </script>
+        
+    <script src="assets/js/scripts.js"></script>
     </body>
 </html>
