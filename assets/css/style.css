@@ -77,7 +77,29 @@ html, body {
     max-width: 8em;         /* As aspect ratio is fixed, we need to limit width to stop height going out of bounds */
     min-width: 4em;
     border-radius: 26%;
-    /* border: 5px solid red; For debugging */
+    transition: max-width 0.3s ease-out;
+}
+
+#git.child:hover {
+    background: linear-gradient(to right, #FF442D, #841D39, #531C50, #841D39, #FF442D);
+    background-size: 800%;
+    fill: white;
+    animation: animate-gradient 9s linear infinite;
+    max-width: 8.8em;
+}
+#linkedin.child:hover {
+    background: linear-gradient(to right, #004183, #0A66C2, #5CA5EE, #0A66C2, #004183);
+    background-size: 800%;
+    fill: white;
+    animation: animate-gradient 9s linear infinite;
+    max-width: 8.8em;
+}
+#artstation.child:hover {
+    background: linear-gradient(to right, #14142C, #1B7195, #13AFF0, #1B7195, #14142C);
+    background-size: 800%;
+    fill: white;
+    animation: animate-gradient 9s linear infinite;
+    max-width: 8.8em;
 }
 
 a {
@@ -85,10 +107,13 @@ a {
     color: black;
 }
 
-.child svg {
+svg {
     width: 55%;
     fill: black;
-    /* border: 5px solid blue; For debugging */
+}
+
+.child:hover svg {
+    fill: white;
 }
 
 .page-heading {
@@ -97,7 +122,6 @@ a {
     font-size: 1.7rem;
 }
 
-/* Make heading look like its cut out of the page. Interior drop shadow? */
 .page-heading h1 {
     font-weight: 900;
     font-size: clamp(6em, 15vw, 8em);   /* Min, Preferred, Max. */
@@ -143,13 +167,32 @@ a {
 
 }
 
-.page-heading h2 {
-    font-weight: 300;
+.page-heading h2 span{
+    display: inline-block;
     font-size: clamp(1.1em, 3vw, 1.6em);
+    letter-spacing: 4px;
+    font-family: monospace;
+    border-right: 2px solid;
+    width: 100%;
+    max-width: 11ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 5s infinite alternate, cursor .5s step-end infinite alternate;
 }
 
+@keyframes typing {
+    0% { width: 0 }
+    5% { width: 0 }
+    100% { width: 100 }
+}
+
+@keyframes cursor {
+    50% { border-color: transparent }
+}
+
+
 .page-heading h3 {
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .page-heading h1, h2, h3 {
