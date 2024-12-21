@@ -33,7 +33,16 @@ html, body {
     font-family: 'Verdana', sans-serif;
     margin: 0;
     padding: 0;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
 }
 
 .spacer {
@@ -41,27 +50,27 @@ html, body {
 }
 
 .outer-box {
-
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #E9E9E9;
+    background-color: #e9e9e9;
     justify-content: center;
     align-items: center;
-    flex-shrink: 1;
+    flex-wrap: nowrap;
+    text-align: center;
 }
+
 
 .parent {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    /*background-color: teal;*/
     padding: 1rem;
     width: 90vw;
     justify-content: center;
     align-items: center;
     gap: 3.8vw;
-    max-height: 30vh;
+    height: 12vh;
 }
 
 .child {
@@ -76,7 +85,7 @@ html, body {
     align-items: center;
     max-width: 8em;         /* As aspect ratio is fixed, we need to limit width to stop height going out of bounds */
     min-width: 4em;
-    border-radius: 26%;
+    border-radius: 24%;
     transition: max-width 0.3s ease-out;
 }
 
@@ -85,21 +94,21 @@ html, body {
     background-size: 800%;
     fill: white;
     animation: animate-gradient 9s linear infinite;
-    max-width: 8.8em;
+    max-width: 8.4em;
 }
 #linkedin.child:hover {
     background: linear-gradient(to right, #004183, #0A66C2, #5CA5EE, #0A66C2, #004183);
     background-size: 800%;
     fill: white;
     animation: animate-gradient 9s linear infinite;
-    max-width: 8.8em;
+    max-width: 8.4em;
 }
 #artstation.child:hover {
     background: linear-gradient(to right, #14142C, #1B7195, #13AFF0, #1B7195, #14142C);
     background-size: 800%;
     fill: white;
     animation: animate-gradient 9s linear infinite;
-    max-width: 8.8em;
+    max-width: 8.4em;
 }
 
 a {
@@ -132,7 +141,7 @@ svg {
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     /* Adding animation to the gradient */
-    animation: animate-gradient 9s linear infinite;
+    animation: animate-gradient 14s linear infinite;
     text-shadow: rgba(255,255,255,0.25) 0px 8px 8px;
 }
 
@@ -161,10 +170,7 @@ svg {
 }
 
 @keyframes animate-gradient {
-    to {
-        background-position: 200%;
-    }
-
+    to { background-position: 200% }
 }
 
 .page-heading h2 span{
@@ -177,13 +183,14 @@ svg {
     max-width: 11ch;
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 5s infinite alternate, cursor .5s step-end infinite alternate;
+    animation: typing 5s /* infinite */ alternate, cursor .5s step-end infinite alternate;
 }
 
 @keyframes typing {
-    0% { width: 0 }
-    5% { width: 0 }
-    100% { width: 100 }
+    0% { width: 0; }
+    5% { width: 0; }
+    30% { width: 100; }
+    100% { width: 100; }
 }
 
 @keyframes cursor {
@@ -193,6 +200,7 @@ svg {
 
 .page-heading h3 {
     font-weight: 300;
+    font-size: 1em;
 }
 
 .page-heading h1, h2, h3 {
@@ -200,15 +208,33 @@ svg {
     padding: 0px;
 }
 
+.navdot {
+    background-color: rgba(155, 153, 153, 0.2);
+    aspect-ratio: 1 / 1;    /* This keeps the aspect ratio 1:1 */
+    flex: 1 1 10vw;          /* Flex-grow, flex-shrink, flex-basis */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    max-width: 1vw;         /* As aspect ratio is fixed, we need to limit width to stop height going out of bounds */
+    min-width: 20px;
+    border-radius: 50%;
+    box-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+
+}
+
+
 footer {
-    background-color: none;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: clamp(0.5vw, 1vw, 1.4vw);
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
     width: 100%;
     position: fixed;
     bottom: 0;
-    z-index: 3;
+    z-index: 5;
 }
 
 footer span {
