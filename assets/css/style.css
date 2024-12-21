@@ -45,7 +45,7 @@ html, body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: skyblue;
+    background-color: #E9E9E9;
     justify-content: center;
     align-items: center;
     flex-shrink: 1;
@@ -55,29 +55,29 @@ html, body {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    background-color: teal;
+    /*background-color: teal;*/
     padding: 1rem;
     width: 90vw;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Spacing between each icon */
+    gap: 3.8vw;
     max-height: 30vh;
 }
 
 .child {
-    background-color: cyan;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
     aspect-ratio: 1 / 1;    /* This keeps the aspect ratio 1:1 */
-    padding: 10px;
-    margin: 10px;
-    flex: 1 1 5em;          /* Flex-grow, flex-shrink, flex-basis */
+    padding: 1px;
     text-align: center;
-    font-size: 1.2rem;
+    flex: 1 1 5em;          /* Flex-grow, flex-shrink, flex-basis */
     display: flex; 
     justify-content: center; 
     align-items: center;
-    border: 5px solid red;
-    max-width: 10em; /* As aspect ratio is fixed, we need to limit width to stop height going out of bounds */
+    max-width: 8em;         /* As aspect ratio is fixed, we need to limit width to stop height going out of bounds */
     min-width: 4em;
+    border-radius: 26%;
+    /* border: 5px solid red; For debugging */
 }
 
 a {
@@ -85,13 +85,10 @@ a {
     color: black;
 }
 
-.child img {
-    width: 70%;
-    border: 5px solid blue;
-}
-
-svg path {
-    color: white;
+.child svg {
+    width: 55%;
+    fill: black;
+    /* border: 5px solid blue; For debugging */
 }
 
 .page-heading {
@@ -100,10 +97,50 @@ svg path {
     font-size: 1.7rem;
 }
 
+/* Make heading look like its cut out of the page. Interior drop shadow? */
 .page-heading h1 {
     font-weight: 900;
-    font-size: clamp(6em, 15vw, 8em); /* Using the clamp function. Min, Preferred, Max. */
-    padding: 0
+    font-size: clamp(6em, 15vw, 8em);   /* Min, Preferred, Max. */
+    background: linear-gradient(to right, #EC2F5A, #CA864D, #ABCF1B, #CA864D, #EC2F5A);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Adding animation to the gradient */
+    animation: animate-gradient 9s linear infinite;
+    text-shadow: rgba(255,255,255,0.25) 0px 8px 8px;
+}
+
+.page-heading h1.hover-gradient-git {
+    background: linear-gradient(to right, #FF442D, #841D39, #531C50, #841D39, #FF442D);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page-heading h1.hover-gradient-linkedin {
+    background: linear-gradient(to right, #004183, #0A66C2, #5CA5EE, #0A66C2, #004183);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page-heading h1.hover-gradient-artstation {
+    background: linear-gradient(to right, #14142C, #1B7195, #13AFF0, #1B7195, #14142C);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes animate-gradient {
+    to {
+        background-position: 200%;
+    }
+
 }
 
 .page-heading h2 {
@@ -121,7 +158,7 @@ svg path {
 }
 
 footer {
-    background-color: aquamarine;
+    background-color: none;
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
@@ -129,9 +166,23 @@ footer {
     position: fixed;
     bottom: 0;
     z-index: 3;
-
 }
 
 footer span {
-    padding: 14px;
+    padding: 15px;
+    font-size: clamp(1.6em, 2.3vw, 2.4em);
+    font-weight: 900;
+    background: grey;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: rgba(255,255,255,0.6) 0px 3px 3px;
+}
+
+footer span:hover {
+    background: black;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: rgba(255,255,255,0.6) 0px 3px 3px;
 }
