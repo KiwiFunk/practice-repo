@@ -1,0 +1,137 @@
+@font-face {
+    font-family: 'Gotham';
+    src: url(../fonts/Gotham-Ultra.otf) format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham';
+    src: url(../fonts/Gotham-Bold.otf) format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham';
+    src: url(../fonts/Gotham-Book.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham';
+    src: url(../fonts/Gotham-Light.otf) format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham';
+    src: url(../fonts/Gotham-Thin.otf) format('opentype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+html, body {
+    font-family: 'Verdana', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.spacer {
+    height: 5vh;
+}
+
+.outer-box {
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: skyblue;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 1;
+}
+
+.parent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: teal;
+    padding: 1rem;
+    width: 90vw;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Spacing between each icon */
+    max-height: 30vh;
+}
+
+.child {
+    background-color: cyan;
+    aspect-ratio: 1 / 1;    /* This keeps the aspect ratio 1:1 */
+    padding: 10px;
+    margin: 10px;
+    flex: 1 1 5em;          /* Flex-grow, flex-shrink, flex-basis */
+    text-align: center;
+    font-size: 1.2rem;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    border: 5px solid red;
+    max-width: 10em; /* As aspect ratio is fixed, we need to limit width to stop height going out of bounds */
+    min-width: 4em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.child img {
+    width: 70%;
+    border: 5px solid blue;
+}
+
+svg path {
+    color: white;
+}
+
+.page-heading {
+    font-family: 'Gotham', 'Arial', sans-serif;
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+.page-heading h1 {
+    font-weight: 900;
+    font-size: clamp(6em, 15vw, 8em); /* Using the clamp function. Min, Preferred, Max. */
+    padding: 0
+}
+
+.page-heading h2 {
+    font-weight: 300;
+    font-size: clamp(1.1em, 3vw, 1.6em);
+}
+
+.page-heading h3 {
+    font-weight: 100;
+}
+
+.page-heading h1, h2, h3 {
+    margin: 5px;
+    padding: 0px;
+}
+
+footer {
+    background-color: aquamarine;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 3;
+
+}
+
+footer span {
+    padding: 14px;
+}
