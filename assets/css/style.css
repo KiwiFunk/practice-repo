@@ -62,6 +62,8 @@ section {
     align-items: center;
     flex-wrap: nowrap;
     text-align: center;
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 
@@ -238,8 +240,10 @@ svg {
 }
 
 .navdot:hover {
-    box-shadow: rgba(255,255,255, 1) 0px 3px 3px;
-    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: rgba(0, 0, 0, 0.0) 0px 1px 1px;
+    background: linear-gradient(to right, #EC2F5A, #CA864D, #ABCF1B, #CA864D, #EC2F5A);
+    background-size: 600%;
+    animation: animate-gradient 14s linear infinite;
 }
 
 footer {
@@ -273,4 +277,46 @@ footer span:hover {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: rgba(255,255,255,0.6) 0px 3px 3px;
+}
+
+.skillsbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type='radio']{
+    display: none;
+}
+
+input[type='radio']:checked + label {
+    background-color: #0A66C2;
+    color: white; 
+    font-size: 2em;
+}
+
+label {
+    padding: 10px 45px;
+    background-color: red;
+    border-radius: 10%;
+    color: black;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.tab-content {
+    width: 80vw;
+    background-color: #004183;
+    text-align: left;
+    display: none;
+    margin: 0px 0;
+}
+
+.tabs-wrapper {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: baseline;
 }
