@@ -104,9 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
             bars.forEach(bar => {
                 bar.style.animation = 'none';
                 bar.offsetHeight; /* trigger reflow */
-                bar.style.animation = 'bar-grow 3s ease-out, animate-gradient 20s infinite';
+                bar.style.animation = 'bar-grow 1.4s ease-out, animate-gradient 20s infinite';
             });
             setWidths();
         }
-    }, { threshold: 0.5 }).observe(document.querySelector('#skills-card'));
+    }, { threshold: 0.1 }).observe(document.querySelector('#skills-card'));
 });
