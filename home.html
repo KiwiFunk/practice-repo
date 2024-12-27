@@ -7,6 +7,7 @@
         <link href="assets/css/style.css" rel="stylesheet">
     </head>
     <body>
+        <!-- Vectors from https://simpleicons.org/ -->
         <section id="home-card">
             <div class="outer-box">
                 <div class="spacer"></div>
@@ -40,89 +41,53 @@
         </section>
         <section id="skills-card">
             <div class="outer-box">
-
                 <div class="skillsbox">
-                    <input type="radio" name="tabs" id="art-tab" checked>
-                    <label for="art-tab" class="tab"><h2>3D</h2></label>
+                    <div class="tabs-wrapper">
+                        <input type="radio" name="tabs" id="art-tab" checked>
+                        <label for="art-tab" class="tab"><h2>3D</h2></label>
 
-                    <input type="radio" name="tabs" id="programming-tab">
-                    <label for="programming-tab" class="tab"><h2>&lt;/&gt;</h2></label>
-
-                    <br>
+                        <input type="radio" name="tabs" id="programming-tab">
+                        <label for="programming-tab" class="tab "><h2 class="tab-two">&lt;/&gt;</h2></label>
+                    </div>
 
                     <div class="tab-content" id="art-content">
-                        <h3>Software</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h3>SOFTWARE</h3>
                         <ul>
                             <li>Adobe CS</li>
-                            <li>Blender</li>
-                            <li>3DS Max</li>
-                            <li>Maya</li>
-                            <li>Substance Suite</li>
+                            <span class="percentage-bar" data-width="60"></span>
+                            <li>3D Packages (Blender/3DS/Maya)</li>
+                            <span class="percentage-bar" data-width="60"></span>
+                            <li>ZBrush</li>
+                            <span class="percentage-bar" data-width="55"></span>
+                            <li>Substance Designer/Painter</li>
+                            <span class="percentage-bar" data-width="55"></span>
+                            <li>Unreal Engine</li>
+                            <span class="percentage-bar" data-width="50"></span>
+                            <li>Marvelous Designer</li>
+                            <span class="percentage-bar" data-width="30"></span>
                             <li>Houdini</li>
+                            <span class="percentage-bar" data-width="15"></span>
                         </ul>
                     </div>
     
                     <div class="tab-content" id="programming-content">
-                        <h3>Languages</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <h3>LANGUAGES</h3>
                         <ul>
                             <li>C#</li>
+                            <span class="percentage-bar programming-languages" data-width="50"></span>
                             <li>HTML</li>
+                            <span class="percentage-bar programming-languages" data-width="60"></span>
                             <li>CSS</li>
+                            <span class="percentage-bar programming-languages" data-width="60"></span>
                             <li>JavaScript</li>
+                            <span class="percentage-bar programming-languages" data-width="40"></span>
                             <li>Python</li>
+                            <span class="percentage-bar programming-languages" data-width="25"></span>
                             <li>Verse</li>
+                            <span class="percentage-bar programming-languages" data-width="20"></span>
                         </ul>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-
-                <!--
-                <h1>Skills</h1>
-                <div class="tab-box">
-                    <input type="radio" name="tabs" id="art-tab" checked>
-                    <label for="art-tab" class="tab"><h2>3D</h2></label>
-
-                    <input type="radio" name="tabs" id="programming-tab">
-                <label for="programming-tab" class="tab"><h2>&lt;/&gt;</h2></label>
-                </div>
-
-                <div class="tab-content" id="art-content">
-                    <h3>Software</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                    <ul>
-                        <li>Adobe CS</li>
-                        <li>Blender</li>
-                        <li>3DS Max</li>
-                        <li>Maya</li>
-                        <li>Substance Suite</li>
-                        <li>Houdini</li>
-                    </ul>
-                </div>
-
-                <div class="tab-content" id="programming-content">
-                    <h3>Languages</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                    <ul>
-                        <li>C#</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>Python</li>
-                        <li>Verse</li>
-                    </ul>
-                </div>
-                -->
-
             </div>
         </section>
         <section id="education-card">

@@ -281,10 +281,11 @@ footer span:hover {
 
 .skillsbox {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
     align-items: center;
+    height: 80vh;
+    width: 90vw;
 }
 
 input[type='radio']{
@@ -292,31 +293,112 @@ input[type='radio']{
 }
 
 input[type='radio']:checked + label {
-    background-color: #0A66C2;
-    color: white; 
+    color: white;                  /*Properties for Checked tab */
     font-size: 2em;
+    font-weight: 100;
 }
 
-label {
-    padding: 10px 45px;
-    background-color: red;
-    border-radius: 10%;
-    color: black;
-    cursor: pointer;
-    transition: .4s;
+input[type='radio']:checked + label h2 {
+    font-family: Gotham;            /*Properties for Checked tab H2*/
+    font-weight: 900;
+    font-size: 4em;
+    transition: .6s;
+    background: linear-gradient(to right, #EC2F5A, #CA864D, #ABCF1B, #CA864D, #EC2F5A);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 14s linear infinite;
+    text-shadow: rgba(255,255,255,0.25) 0px 4px 4px; 
 }
 
-.tab-content {
-    width: 80vw;
-    background-color: #004183;
-    text-align: left;
-    display: none;
-    margin: 0px 0;
+input[type='radio']:checked + label h2.tab-two {
+    background: linear-gradient(to right, #018F9C, #714DA5, #b167c0, #714DA5, #018F9C);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
 }
 
 .tabs-wrapper {
-    display: flex;
+    height: 14vh;  /* 12 seems to be lowest acceptable value */
+    width: 90vw;
     gap: 10px;
-    justify-content: center;
-    align-items: baseline;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+  
+}
+
+label {                             /*Properties for Unchecked tab */
+    padding: 10px;
+    border-radius: 10%;
+    cursor: pointer;
+    transition: .1s;
+}
+
+label:hover {                             /*Properties for Unchecked tab */
+    font-size: larger;
+}
+
+input[type='radio'] + label h2 {   /*Properties for Unchecked tab H2 */
+    font-family: Gotham;
+    font-weight: 900;
+    font-size: 3em;
+    transition: 1s;
+    color: rgb(207, 207, 207);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    animation: animate-gradient 14s linear infinite;
+    text-shadow: rgba(255,255,255,0.7) 0px 3px 3px; 
+    box-shadow: #0A66C2;
+}
+
+
+.tab-content {
+    width: 90%;
+    text-align: left;
+    display: none;
+    margin: 0px 0;
+    padding: 0 15px;
+}
+
+.tab-content h3 {
+    font-family: 'Gotham';
+    font-weight: 700;
+    font-size: 3em;    
+}
+
+uc{
+    padding: 0;
+}
+
+li{
+    list-style: none;
+    padding: 5px 0px;
+}
+
+.percentage-bar {
+    background: linear-gradient(to right, #EC2F5A, #CA864D, #ABCF1B, #CA864D, #EC2F5A);
+    background-size: 200%;
+    display: inline-block;
+    border-radius: 10px;
+    --width: 0vw; /* Default width, will be overwritten by JS */
+    width: var(--width);
+    height: 20px;
+    animation: bar-grow 1.4s ease-out, animate-gradient 20s infinite;
+    box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 7px inset;
+}
+
+@keyframes bar-grow {
+    0% { width: 0; }
+  
+}
+
+.programming-languages {
+    background: linear-gradient(to right, #018F9C, #714DA5, #b167c0, #714DA5, #018F9C);
+    background-size: 200%;
 }
